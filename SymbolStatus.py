@@ -7,8 +7,8 @@ class SymbolStatusHander(sublime_plugin.EventListener):
       for (r, name) in reversed(view.symbols()):
         row, col = view.rowcol(r.begin())
         if row <= region_row:
-          view.set_status('symbol', name)
+          view.set_status('last_symbol', name.strip())
           print(name)
           return
 
-    view.erase_status('symbol')
+    view.erase_status('last_symbol')
