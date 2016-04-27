@@ -8,7 +8,6 @@ class SymbolStatusHander(sublime_plugin.EventListener):
         row, col = view.rowcol(r.begin())
         if row <= region_row:
           view.set_status('last_symbol', name.strip())
-          print(name)
           return
 
     view.erase_status('last_symbol')
